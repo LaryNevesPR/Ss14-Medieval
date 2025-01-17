@@ -177,3 +177,18 @@
 
 - type: playTimeTracker
   id: JobCBURN
+
+- type: playTimeTracker
+  id: JobQueen
+- type: playTimeTracker
+  id: JobKing
+- type: playTimeTracker
+  id: JobBishop
+- type: playTimeTracker
+  id: JobHand
+- type: playTimeTracker
+  id: JobLordCommanderOfTheKingsguard
+- type: playTimeTracker
+  id: JobGuard
+- type: playTimeTracker
+  id: JobNun

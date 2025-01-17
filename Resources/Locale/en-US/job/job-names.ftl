@@ -128,3 +128,14 @@ JobTechnicalAssistant = Technical Assistant
 JobVisitor = Visitor
 JobWarden = Warden
 JobZookeeper = Zookeeper
+
+
+
+#Andromeda
+job-name-king = Barão
+job-name-queen = Baronesa
+job-name-bishop = Grande Mestre
+job-name-hand = Mão
+job-name-lck = Lorde Comandante da Guarda Real
+job-name-kingguard = Guarda
+job-name-nun = Freira

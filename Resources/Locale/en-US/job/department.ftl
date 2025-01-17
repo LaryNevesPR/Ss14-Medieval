@@ -8,3 +8,9 @@ department-Science = Science
 department-Silicon = Silicons
 department-Specific = Station specific
 department-Dignitary = Dignitary
+
+#Andromeda
+
+department-Kingsguard = Guarda Real
+department-Royalty = Realeza
+department-Clergy = Clero
