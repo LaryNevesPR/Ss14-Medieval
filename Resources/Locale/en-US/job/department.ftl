@@ -14,3 +14,5 @@ department-Dignitary = Dignitary
 department-Kingsguard = Guarda Real
 department-Royalty = Realeza
 department-Clergy = Clero
+department-Market = Mercado
+department-Civil = Civil
