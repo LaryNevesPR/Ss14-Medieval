@@ -138,3 +138,4 @@ job-name-tavernkeeper = Taverneiro
 job-name-inquisitor = Inquisidor
 job-name-carrier = Transportador
 job-name-miner = Minerador
+job-name-maid = Empregada
