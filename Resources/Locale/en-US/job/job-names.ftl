@@ -139,3 +139,6 @@ job-name-inquisitor = Inquisidor
 job-name-carrier = Transportador
 job-name-miner = Minerador
 job-name-maid = Empregada
+job-name-peasant = Camponês
+job-name-md = Mestre Mago
+job-name-wizard = Mago Aprendiz
