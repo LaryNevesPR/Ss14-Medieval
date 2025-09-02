@@ -62,6 +62,9 @@ namespace Content.Shared.Preferences
         [DataField]
         public string Name { get; set; } = "John Doe";
 
+        [DataField]
+        public string Surname { get; set; } = "dos Santos";
+
         /// <summary>
         /// Detailed text that can appear for the character if <see cref="CCVars.FlavorText"/> is enabled.
         /// </summary>
@@ -124,6 +127,7 @@ namespace Content.Shared.Preferences
 
         public HumanoidCharacterProfile(
             string name,
+            string surname,
             string flavortext,
             string species,
             int age,
@@ -138,6 +142,7 @@ namespace Content.Shared.Preferences
             Dictionary<string, RoleLoadout> loadouts)
         {
             Name = name;
+            Surname = surname;
             FlavorText = flavortext;
             Species = species;
             Age = age;
@@ -169,6 +174,7 @@ namespace Content.Shared.Preferences
         /// <summary>Copy constructor</summary>
         public HumanoidCharacterProfile(HumanoidCharacterProfile other)
             : this(other.Name,
+                other.Surname,
                 other.FlavorText,
                 other.Species,
                 other.Age,
@@ -247,10 +253,12 @@ namespace Content.Shared.Preferences
             }
 
             var name = GetName(species, gender);
+            var surname = GetSurname();
 
             return new HumanoidCharacterProfile()
             {
                 Name = name,
+                Surname = surname,
                 Sex = sex,
                 Age = age,
                 Gender = gender,
@@ -262,6 +270,11 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithName(string name)
         {
             return new(this) { Name = name };
+        }
+
+        public HumanoidCharacterProfile WithSurname(string surname)
+        {
+            return new(this) { Surname = surname };
         }
 
         public HumanoidCharacterProfile WithFlavorText(string flavorText)
@@ -455,6 +468,7 @@ namespace Content.Shared.Preferences
         {
             if (maybeOther is not HumanoidCharacterProfile other) return false;
             if (Name != other.Name) return false;
+            if (Surname != other.Surname) return false;
             if (Age != other.Age) return false;
             if (Sex != other.Sex) return false;
             if (Gender != other.Gender) return false;
@@ -536,6 +550,37 @@ namespace Content.Shared.Preferences
                 name = GetName(Species, gender);
             }
 
+            string surname;
+            if (string.IsNullOrEmpty(Surname))
+            {
+                surname = "Doe";
+            }
+            else if (Surname.Length > maxNameLength)
+            {
+                surname = Surname[..maxNameLength];
+            }
+            else
+            {
+                surname = Surname;
+            }
+
+            surname = surname.Trim();
+
+            if (configManager.GetCVar(CCVars.RestrictedNames))
+            {
+                surname = RestrictedNameRegex.Replace(surname, string.Empty);
+            }
+
+            if (configManager.GetCVar(CCVars.ICNameCase))
+            {
+                surname = ICNameCaseRegex.Replace(surname, m => m.Groups["word"].Value.ToUpper());
+            }
+
+            if (string.IsNullOrEmpty(surname))
+            {
+                surname = "Doe";
+            }
+
             string flavortext;
             var maxFlavorTextLength = configManager.GetCVar(CCVars.MaxFlavorTextLength);
             if (FlavorText.Length > maxFlavorTextLength)
@@ -594,6 +639,7 @@ namespace Content.Shared.Preferences
                          .ToList();
 
             Name = name;
+            Surname = surname;
             FlavorText = flavortext;
             Age = age;
             Sex = sex;
@@ -689,6 +735,11 @@ namespace Content.Shared.Preferences
             var namingSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<NamingSystem>();
             return namingSystem.GetName(species, gender);
         }
+        public static string GetSurname()
+        {
+            return "Meow";
+
+        }
 
         public override bool Equals(object? obj)
         {
@@ -711,6 +762,7 @@ namespace Content.Shared.Preferences
             hashCode.Add(Appearance);
             hashCode.Add((int)SpawnPriority);
             hashCode.Add((int)PreferenceUnavailable);
+            hashCode.Add(Surname);
             return hashCode.ToHashCode();
         }
 

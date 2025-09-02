@@ -424,6 +424,8 @@ namespace Content.Server.Database
 
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
+
+        public string Surname { get; set; } = null!;
     }
 
     public class Job
