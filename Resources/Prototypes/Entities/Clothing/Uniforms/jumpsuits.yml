@@ -1380,3 +1380,14 @@
     sprite: _Andromeda/Clothing/Uniforms/Jumpskirt/campones2.rsi
   - type: Clothing
     sprite: _Andromeda/Clothing/Uniforms/Jumpskirt/campones2.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitTaverneiro1
+  name: Roupa de Taverneiro
+  description: Roupa de taverneiro.
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Clothing/Uniforms/jumpsuit/taverneiro1.rsi
+  - type: Clothing
+    sprite: _Andromeda/Clothing/Uniforms/jumpsuit/taverneiro1.rsi
