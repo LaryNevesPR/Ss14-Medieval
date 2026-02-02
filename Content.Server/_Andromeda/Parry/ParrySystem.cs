@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Damage.Components;
 using Content.Shared._Andromeda.Parry;
 using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Popups;
@@ -14,6 +15,8 @@ public sealed class ParrySystem : EntitySystem
     [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
+
     public override void Initialize()
     {
         SubscribeNetworkEvent<ParryActionEvent>(OnParryRequested);
@@ -76,18 +79,26 @@ public sealed class ParrySystem : EntitySystem
 
     private bool IsMeleeAttack(EntityUid attacker)
     {
-        return TryComp<HandsComponent>(attacker, out var hands) &&
-            hands.ActiveHandEntity is { } held &&
-            HasComp<MeleeWeaponComponent>(held);
+        if (!TryComp<HandsComponent>(attacker, out var hands))
+            return false;
+
+        if (!_handsSystem.TryGetActiveItem((attacker, hands), out var held))
+            return false;
+
+        return HasComp<MeleeWeaponComponent>(held.Value);
     }
 
     private bool TryGetActiveParryWeapon(EntityUid user, [NotNullWhen(true)] out ParryComponent? parry)
     {
         parry = null;
-        if (!TryComp<HandsComponent>(user, out var hands) || hands.ActiveHandEntity is not { } held)
+
+        if (!TryComp<HandsComponent>(user, out var hands))
             return false;
 
-        return TryComp(held, out parry);
+        if (!_handsSystem.TryGetActiveItem((user, hands), out var held))
+            return false;
+
+        return TryComp(held.Value, out parry);
     }
 
     public override void Update(float frameTime)
