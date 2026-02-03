@@ -1,7 +1,7 @@
 - type: species
   id: Kitsune
   name: Kitsune
-  roundStart: true
+  roundStart: false
   prototype: MobKitsune
   sprites: MobHumanSprites
   markingLimits: MobKitsuneMarkingLimits
