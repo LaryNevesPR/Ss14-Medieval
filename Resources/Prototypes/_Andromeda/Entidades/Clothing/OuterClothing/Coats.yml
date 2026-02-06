@@ -1,0 +1,29 @@
+#Medieval
+
+#mercado_______________________________________________________________________________________________________
+
+#tesoureiro
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatTesoureiro1
+  name: Casaco do Tesoureiro
+  description: Casaco do Tesoureiro adornado em ouro
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Clothing/OuterClothing/Coats/tesoureiro1.rsi
+  - type: Clothing
+    sprite: _Andromeda/Clothing/OuterClothing/Coats/tesoureiro1.rsi
+
+#transportador
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatTransportador1
+  name: Casaco de Transportador
+  description: Casaco de Transportador adornado em prata
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Clothing/OuterClothing/Coats/transportador1.rsi
+  - type: Clothing
+    sprite: _Andromeda/Clothing/OuterClothing/Coats/transportador1.rsi
+
+#mercado_______________________________________________________________________________________________________
