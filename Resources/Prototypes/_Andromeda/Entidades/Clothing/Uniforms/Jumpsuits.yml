@@ -1,5 +1,7 @@
 #Medieval
 
+#civil_________________________________________________________________________________________________________ 
+#campones
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCampones1
@@ -21,3 +23,47 @@
     sprite: _Andromeda/Clothing/Uniforms/Jumpskirt/campones2.rsi
   - type: Clothing
     sprite: _Andromeda/Clothing/Uniforms/Jumpskirt/campones2.rsi
+
+#taverneiro
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitTaverneiro1
+  name: Roupa de Taverneiro
+  description: Uma roupa de Taverneiro.
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Clothing/Uniforms/Jumpsuit/taverneiro1.rsi
+  - type: Clothing
+    sprite: _Andromeda/Clothing/Uniforms/Jumpsuit/taverneiro1.rsi
+
+#civil_________________________________________________________________________________________________________
+
+#mercado_______________________________________________________________________________________________________
+#minerador
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitMinerador1
+  name: Roupa de Minerador
+  description: Uma roupa de minerador.
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Clothing/Uniforms/Jumpsuit/minerador1.rsi
+  - type: Clothing
+    sprite: _Andromeda/Clothing/Uniforms/Jumpsuit/minerador1.rsi
+
+#transportador
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitTransportador1
+  name: Roupa de Transportador
+  description: Uma roupa de transportador.
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Clothing/Uniforms/Jumpsuit/transportador1.rsi
+  - type: Clothing
+    sprite: _Andromeda/Clothing/Uniforms/Jumpsuit/transportador1.rsi
+#mercado_______________________________________________________________________________________________________
+
+
+
+
