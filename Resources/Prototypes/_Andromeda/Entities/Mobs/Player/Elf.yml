@@ -1,0 +1,5 @@
+- type: entity
+  save: false
+  name: Urist McHands The Elf
+  parent: BaseMobElf
+  id: MobElf

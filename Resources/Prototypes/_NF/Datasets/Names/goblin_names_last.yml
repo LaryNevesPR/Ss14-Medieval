@@ -1,0 +1,6 @@
+# used this tool: https://www.fantasynamegenerators.com/goblin-wow-names.php
+- type: localizedDataset
+  id: names_goblin_last
+  values:
+    prefix: names-goblin-last-dataset-
+    count: 210

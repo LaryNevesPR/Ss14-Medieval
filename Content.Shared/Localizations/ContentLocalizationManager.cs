@@ -10,47 +10,61 @@ namespace Content.Shared.Localizations
         [Dependency] private readonly ILocalizationManager _loc = default!;
 
         // If you want to change your codebase's language, do it here.
-        private const string Culture = "en-US";
+        private const string Culture = "pt-BR";
+ 
+         /// <summary>
+         /// Custom format strings used for parsing and displaying minutes:seconds timespans.
+         /// </summary>
+         public static readonly string[] TimeSpanMinutesFormats = new[]
+         {
+             @"m\:ss",
+             @"mm\:ss",
+             @"%m",
+             @"mm"
+         };
+ 
+         public void Initialize()
+         {
+             var culture = new CultureInfo(Culture);
+ 
+             _loc.LoadCulture(culture);
+             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
+             _loc.AddFunction(culture, "MAKEPLURAL", FormatMakePlural);
+             _loc.AddFunction(culture, "MANY", FormatMany);
+             _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
+             _loc.AddFunction(culture, "POWERJOULES", FormatPowerJoules);
+             // NOTE: ENERGYWATTHOURS() still takes a value in joules, but formats as watt-hours.
+             _loc.AddFunction(culture, "ENERGYWATTHOURS", FormatEnergyWattHours);
+             _loc.AddFunction(culture, "UNITS", FormatUnits);
+             _loc.AddFunction(culture, "TOSTRING", args => FormatToString(culture, args));
+             _loc.AddFunction(culture, "LOC", FormatLoc);
+             _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
+             _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
+             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
+             //_loc.AddFunction(culture, "GASQUANTITY", FormatGasQuantity); // Frontier
+ 
+ 
+             /*
+              * The following language functions are specific to the english localization. When working on your own
+              * localization you should NOT modify these, instead add new functions specific to your language/culture.
+              * This ensures the english translations continue to work as expected when fallbacks are needed.
+              */
+             var cultureEn = new CultureInfo("en-US");
+             _loc.LoadCulture(cultureEn);
+             _loc.SetFallbackCluture(cultureEn);
+ 
+             //_loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
+             //_loc.AddFunction(cultureEn, "MANY", FormatMany);
+             _loc.AddFunction(cultureEn, "POWERWATTS", FormatPowerWatts);
+             _loc.AddFunction(cultureEn, "POWERJOULES", FormatPowerJoules);
+             _loc.AddFunction(cultureEn, "UNITS", FormatUnits);
+             _loc.AddFunction(cultureEn, "TOSTRING", args => FormatToString(cultureEn, args));
+             _loc.AddFunction(cultureEn, "LOC", FormatLoc);
+             _loc.AddFunction(cultureEn, "NATURALFIXED", FormatNaturalFixed);
+             _loc.AddFunction(cultureEn, "NATURALPERCENT", FormatNaturalPercent);
+             _loc.AddFunction(cultureEn, "PRESSURE", FormatPressure);
+         }
 
-        /// <summary>
-        /// Custom format strings used for parsing and displaying minutes:seconds timespans.
-        /// </summary>
-        public static readonly string[] TimeSpanMinutesFormats = new[]
-        {
-            @"m\:ss",
-            @"mm\:ss",
-            @"%m",
-            @"mm"
-        };
-
-        public void Initialize()
-        {
-            var culture = new CultureInfo(Culture);
-
-            _loc.LoadCulture(culture);
-            _loc.AddFunction(culture, "PRESSURE", FormatPressure);
-            _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
-            _loc.AddFunction(culture, "POWERJOULES", FormatPowerJoules);
-            // NOTE: ENERGYWATTHOURS() still takes a value in joules, but formats as watt-hours.
-            _loc.AddFunction(culture, "ENERGYWATTHOURS", FormatEnergyWattHours);
-            _loc.AddFunction(culture, "UNITS", FormatUnits);
-            _loc.AddFunction(culture, "TOSTRING", args => FormatToString(culture, args));
-            _loc.AddFunction(culture, "LOC", FormatLoc);
-            _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
-            _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
-            _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
-
-
-            /*
-             * The following language functions are specific to the english localization. When working on your own
-             * localization you should NOT modify these, instead add new functions specific to your language/culture.
-             * This ensures the english translations continue to work as expected when fallbacks are needed.
-             */
-            var cultureEn = new CultureInfo("en-US");
-
-            _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
-            _loc.AddFunction(cultureEn, "MANY", FormatMany);
-        }
 
         private ILocValue FormatMany(LocArgs args)
         {
