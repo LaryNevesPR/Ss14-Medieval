@@ -1,0 +1,11 @@
+species-name-elf = Elfo
+species-name-tiefling = Tiefling
+species-name-human = Humano
+species-name-dwarf = Anão
+species-name-reptilian = Argoniano
+species-name-slime = Slime Person
+species-name-diona = Diona
+species-name-arachnid = Arachnid
+species-name-moth = Moth Person
+species-name-skeleton = Skeleton
+species-name-vox = Vox

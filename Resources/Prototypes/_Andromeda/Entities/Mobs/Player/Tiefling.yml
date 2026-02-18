@@ -1,0 +1,5 @@
+- type: entity
+  save: false
+  name: Urist McHands The Tiefling
+  parent: BaseMobTiefling
+  id: MobTiefling
