@@ -1,0 +1,22 @@
+#Andromeda
+job-name-king = Rei
+job-name-queen = Rainha
+job-name-bishop = Grande Mestre
+job-name-hand = Lorde Mão
+job-name-lcg = Lorde Comandante da Guarda Real
+job-name-guard = Guarda
+job-name-nun = Freira
+job-name-alchemist = Alquimista
+job-name-treasurer = Lorde Tesoureiro
+job-name-knight = Cavaleiro
+job-name-executioner = Carrasco
+job-name-jester = Jester
+job-name-bard = Bardo
+job-name-tavernkeeper = Taverneiro
+job-name-inquisitor = Inquisidor
+job-name-carrier = Transportador
+job-name-miner = Minerador
+job-name-maid = Empregada
+job-name-peasant = Camponês
+job-name-md = Mestre Mago
+job-name-wizard = Mago Aprendiz

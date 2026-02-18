@@ -549,8 +549,8 @@
         amount: 0.25
       - !type:AdjustReagent # Frontier: Goblin
         conditions: # Frontier: Goblin
-        - !type:OrganType # Frontier: Goblin
-          type: Goblin # Frontier: Goblin
+        - !type:MetabolizerTypeCondition
+          type: [ Goblin ] # Frontier: Goblin
         reagent: Protein # Frontier: Goblin
         amount: 0.5 # Frontier: Goblin
 
