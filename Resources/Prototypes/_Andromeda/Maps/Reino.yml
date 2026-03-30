@@ -2,17 +2,17 @@
   id: MapaReino
   mapName: Reino
   mapsBelow:
-  - /Maps/Reino/Reino-1.yml
-  - /Maps/Reino/Reino-2.yml
-  - /Maps/Reino/Reino-3.yml
-  - /Maps/Reino/Reino-4.yml
-  mapPath: /Maps/Reino/Reino0.yml
+  - /Maps/Reino/reino-1.yml
+  - /Maps/Reino/reino-2.yml
+  - /Maps/Reino/reino-3.yml
+  - /Maps/Reino/reino-4.yml
+  mapPath: /Maps/Reino/reino0.yml
   mapsAbove:
-  - /Maps/Reino/Reino1.yml
-  - /Maps/Reino/Reino2.yml
-  - /Maps/Reino/Reino3.yml
-  - /Maps/Reino/Reino4.yml
-  - /Maps/Reino/Reino5.yml
+  - /Maps/Reino/reino1.yml
+  - /Maps/Reino/reino2.yml
+  - /Maps/Reino/reino3.yml
+  - /Maps/Reino/reino4.yml
+  - /Maps/Reino/reino5.yml
   zLevelsComponentOverrides:
      - type: MapAtmosphere
        space: False

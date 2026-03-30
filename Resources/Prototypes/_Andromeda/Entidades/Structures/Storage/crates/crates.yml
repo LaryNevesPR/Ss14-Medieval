@@ -1,0 +1,133 @@
+- type: entity
+  parent: CrateGeneric
+  id: AndroCrateMadeira
+  name: Caixa de madeira
+  description: Uma caixa de madeira
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Structures/Storage/Crates/chest_wood1.rsi
+    layers:
+    - state: crate
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: crate_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: paper
+      sprite: Structures/Storage/Crates/labels.rsi
+      offset: "0.0,-0.09375"
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Icon
+    sprite: _Andromeda/Structures/Storage/Crates/chest_wood1.rsi
+    state: crate_icon
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateDoorOpen: crate_open
+    stateDoorClosed: crate_door
+
+- type: entity
+  parent: AndroCrateMadeira
+  id: AndroCrateMadeira2
+  name: Caixa de madeira
+  description: Uma caixa de madeira
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Structures/Storage/Crates/chest_wood2.rsi
+  - type: Icon
+    sprite: _Andromeda/Structures/Storage/Crates/chest_wood2.rsi
+
+- type: entity
+  parent: AndroCrateMadeira
+  id: AndroCrateMadeiraGold
+  name: Caixa de madeira
+  description: Uma caixa de madeira
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Structures/Storage/Crates/chest_wood_gold.rsi
+  - type: Icon
+    sprite: _Andromeda/Structures/Storage/Crates/chest_wood_gold.rsi
+
+- type: entity
+  parent: AndroCrateMadeira
+  id: AndroCrateMadeiraSilver
+  name: Caixa de madeira
+  description: Uma caixa de madeira
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Structures/Storage/Crates/chest_wood_silver.rsi
+  - type: Icon
+    sprite: _Andromeda/Structures/Storage/Crates/chest_wood_silver.rsi
+
+- type: entity
+  parent: AndroCrateMadeira
+  id: AndroCrateGold
+  name: Baú nobre de ouro
+  description: Muita riqueza
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Structures/Storage/Crates/chest_gold.rsi
+  - type: Icon
+    sprite: _Andromeda/Structures/Storage/Crates/chest_gold.rsi
+
+# Cabinet
+- type: entity
+  parent: AndroCrateMadeira
+  id: AndroWoodCloset
+  name: Armario de madeira
+  description: Roupas!
+  components:
+  - type: EntityStorage
+    closeSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+    openSound:
+      path: /Audio/Effects/woodenclosetopen.ogg
+  - type: Sprite
+    sprite: _Andromeda/Structures/Storage/Crates/wood_cabinet.rsi
+  - type: Icon
+    sprite: _Andromeda/Structures/Storage/Crates/wood_cabinet.rsi
+
+- type: entity
+  parent: AndroCrateMadeira
+  id: AndroWoodCloset2
+  name: Armario de madeira
+  description: Roupas!
+  components:
+  - type: EntityStorage
+    closeSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+    openSound:
+      path: /Audio/Effects/woodenclosetopen.ogg
+  - type: Sprite
+    sprite: _Andromeda/Structures/Storage/Crates/wood_cabinet2.rsi
+  - type: Icon
+    sprite: _Andromeda/Structures/Storage/Crates/wood_cabinet2.rsi
+
+- type: entity
+  parent: AndroCrateMadeira
+  id: AndroWoodCloset3
+  name: Armario de madeira
+  description: Roupas!
+  components:
+  - type: EntityStorage
+    closeSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+    openSound:
+      path: /Audio/Effects/woodenclosetopen.ogg
+  - type: Sprite
+    sprite: _Andromeda/Structures/Storage/Crates/wood_cabinet3.rsi
+  - type: Icon
+    sprite: _Andromeda/Structures/Storage/Crates/wood_cabinet3.rsi
+
+- type: entity
+  parent: AndroCrateMadeira
+  id: AndroLordCabinet
+  name: Armario ornado.
+  description: Roupas para um nobre.
+  components:
+  - type: EntityStorage
+    closeSound:
+      path: /Audio/Effects/woodenclosetclose.ogg
+    openSound:
+      path: /Audio/Effects/woodenclosetopen.ogg
+  - type: Sprite
+    sprite: _Andromeda/Structures/Storage/Crates/lord_cabinet.rsi
+  - type: Icon
+    sprite: _Andromeda/Structures/Storage/Crates/lord_cabinet.rsi

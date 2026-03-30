@@ -1,0 +1,60 @@
+- type: entity
+  parent: BaseStructure
+  id: Anvil
+  suffix: Andromeda
+  components:
+  - type: Icon
+    sprite: _Andromeda/Objects/Anvil
+    state: anvil
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path:
+          "/Audio/Weapons/boxingpunch1.ogg"
+  - type: Tag
+    tags:
+    - Wooden
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    anchored: true
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2000
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlasteel:
+            min: 1
+            max: 5
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Sprite
+    sprite: _Andromeda/Objects/Anvil
+    drawdepth: WallTops
+    state: anvil
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.5,0.2,0.5"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - Opaque
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: Climbable
+    delay: 2.0
+  - type: Appearance

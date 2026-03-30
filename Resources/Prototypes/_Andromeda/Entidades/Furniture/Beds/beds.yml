@@ -1,0 +1,72 @@
+- type: entity
+  name: bed
+  id: AndroBed
+  parent: Bed
+  description: This is used to lie in, sleep in or strap on. Resting here provides extremely slow healing.
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Structures/Furniture/furniture.rsi
+    state: bed
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+
+- type: entity
+  name: bed
+  id: AndroBedWool
+  parent: AndroBed
+  description: This is used to lie in, sleep in or strap on. Resting here provides extremely slow healing.
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Structures/Furniture/furniture.rsi
+    state: woolbed
+
+- type: entity
+  name: bed
+  id: AndroBedInn
+  parent: AndroBed
+  description: This is used to lie in, sleep in or strap on. Resting here provides extremely slow healing.
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Structures/Furniture/furniture.rsi
+    state: inn_bed
+
+- type: entity
+  name: bed
+  id: AndroShiBed
+  parent: AndroBed
+  description: This is used to lie in, sleep in or strap on. Resting here provides extremely slow healing.
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Structures/Furniture/furniture.rsi
+    state: shitbed
+
+- type: entity
+  name: bed
+  id: AndroShiBed2
+  parent: AndroBed
+  description: This is used to lie in, sleep in or strap on. Resting here provides extremely slow healing.
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Structures/Furniture/furniture.rsi
+    state: shitbed2
+
+- type: entity
+  name: bed
+  id: AndroDoubleBed
+  parent: AndroBed
+  description: This is used to lie in, sleep in or strap on. Resting here provides extremely slow healing.
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Structures/Furniture/furniture.rsi
+    state: double
+
+- type: entity
+  name: bed
+  id: AndroDoubleBed
+  parent: AndroBed
+  description: This is used to lie in, sleep in or strap on. Resting here provides extremely slow healing.
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Structures/Furniture/furniture.rsi
+    state: double

@@ -1,0 +1,233 @@
+- type: entity
+  parent: BaseItem
+  id: AndroCoinsCobre
+  name: Moeda de Cobre
+  description: Moedinha
+  components:
+  - type: Cash
+  - type: Item
+    shape:
+    - 0,0,1,0
+    storedOffset: 0,-2
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      AndroCoinCobre: 1
+  - type: StaticPrice
+    price: 0
+  - type: Stack
+    stackType: AndroCoinCobre
+    count: 1
+    baseLayer: base
+    layerStates:
+    - c0
+    - c2
+    - c3
+    - c5
+    - c10
+    - c15
+    - c19
+    layerFunction: Threshold
+  - type: StackLayerThreshold
+    thresholds: [2, 3, 5, 10, 15, 19]
+  - type: Sprite
+    sprite: _Andromeda/Objects/Economy/coin.rsi
+    state: c0
+    layers:
+    - state: c0
+      map: ["base"]
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        density: 30
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.2,0.25,0.1"
+        mask:
+        - ItemMask
+  - type: Appearance
+  - type: CargoSellBlacklist # Frontier
+
+- type: entity
+  parent: BaseItem
+  id: AndroCoinsPrata
+  name: Moeda de Prata
+  description: Moedinha
+  components:
+  - type: Cash
+  - type: Item
+    shape:
+    - 0,0,1,0
+    storedOffset: 0,-2
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      AndroCoinPrata: 1
+  - type: StaticPrice
+    price: 0
+  - type: Stack
+    stackType: AndroCoinPrata
+    count: 1
+    baseLayer: base
+    layerStates:
+    - s0
+    - s2
+    - s3
+    - s5
+    - s10
+    - s15
+    - s19
+    layerFunction: Threshold
+  - type: StackLayerThreshold
+    thresholds: [2, 3, 5, 10, 15, 19]
+  - type: Sprite
+    sprite: _Andromeda/Objects/Economy/coin.rsi
+    state: s0
+    layers:
+    - state: s0
+      map: ["base"]
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        density: 30
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.2,0.25,0.1"
+        mask:
+        - ItemMask
+  - type: Appearance
+  - type: CargoSellBlacklist # Frontier
+
+- type: entity
+  parent: BaseItem
+  id: AndroCoinsOuro
+  name: Moeda de Ouro
+  description: Moedinha
+  components:
+  - type: Cash
+  - type: Item
+    shape:
+    - 0,0,1,0
+    storedOffset: 0,-2
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      AndroCoinOuro: 1
+  - type: StaticPrice
+    price: 0
+  - type: Stack
+    stackType: AndroCoinOuro
+    count: 1
+    baseLayer: base
+    layerStates:
+    - g0
+    - g2
+    - g3
+    - g5
+    - g10
+    - g15
+    - g19
+    layerFunction: Threshold
+  - type: StackLayerThreshold
+    thresholds: [2, 3, 5, 10, 15, 19]
+  - type: Sprite
+    sprite: _Andromeda/Objects/Economy/coin.rsi
+    state: g0
+    layers:
+    - state: g0
+      map: ["base"]
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        density: 30
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.2,0.25,0.1"
+        mask:
+        - ItemMask
+  - type: Appearance
+  - type: CargoSellBlacklist # Frontier
+
+#Stack
+- type: stack
+  id: AndroCoinCobre
+  name: Moeda de Cobre
+  icon: { sprite: _Andromeda/Objects/Economy/coin.rsi, state: c0 }
+  spawn: AndroCoinsCobre
+
+- type: stack
+  id: AndroCoinPrata
+  name: Moeda de Prata
+  icon: { sprite: _Andromeda/Objects/Economy/coin.rsi, state: s0 }
+  spawn: AndroCoinsPrata
+
+- type: stack
+  id: AndroCoinOuro
+  name: Moeda de Ouro
+  icon: { sprite: _Andromeda/Objects/Economy/coin.rsi, state: g0 }
+  spawn: AndroCoinsOuro
+
+#
+- type: material
+  id: AndroCoinCobre
+  name: Moeda de Cobre
+  unit: materials-unit-bill
+  stackEntity: AndroCoinsCobre
+  icon: { sprite: _Andromeda/Objects/Economy/coin.rsi, state: c0 }
+  price: 1
+
+- type: material
+  id: AndroCoinPrata
+  name: Moeda de Prata
+  unit: materials-unit-bill
+  stackEntity: AndroCoinsPrata
+  icon: { sprite: _Andromeda/Objects/Economy/coin.rsi, state: s0 }
+  price: 1
+
+- type: material
+  id: AndroCoinOuro
+  name: Moeda de Ouro
+  unit: materials-unit-bill
+  stackEntity: AndroCoinsOuro
+  icon: { sprite: _Andromeda/Objects/Economy/coin.rsi, state: g0 }
+  price: 1
+
+#Stacks
+- type: entity
+  parent: AndroCoinsOuro
+  id: AndroCoinsOuro10
+  suffix: 10
+  components:
+  - type: Icon
+    sprite: _Andromeda/Objects/Economy/coin.rsi
+    state: g10
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: AndroCoinsCobre
+  id: AndroCoinsCobre10
+  suffix: 10
+  components:
+  - type: Icon
+    sprite: _Andromeda/Objects/Economy/coin.rsi
+    state: c10
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: AndroCoinsPrata
+  id: AndroCoinsPrata10
+  suffix: 10
+  components:
+  - type: Icon
+    sprite: _Andromeda/Objects/Economy/coin.rsi
+    state: s10
+  - type: Stack
+    count: 10

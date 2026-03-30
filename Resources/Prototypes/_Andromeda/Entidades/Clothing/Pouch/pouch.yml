@@ -1,0 +1,39 @@
+- type: entity
+  parent: [Clothing, ContentsExplosionResistanceBase]
+  id: Pouch
+  name: Pouch
+  description: Guarde suas moedas!!
+  components:
+  - type: Sprite
+    sprite: _Andromeda/Clothing/Storage/pouch.rsi
+    state: pouch
+    scale: 0.8,0.8
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - idcard
+  - type: Storage
+    grid:
+    - 0,0,1,2
+    maxItemSize: Tiny
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  # to prevent bag open/honk spam
+  - type: UseDelay
+    delay: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: AllowsSleepInside # DeltaV - enable sleeping inside bags

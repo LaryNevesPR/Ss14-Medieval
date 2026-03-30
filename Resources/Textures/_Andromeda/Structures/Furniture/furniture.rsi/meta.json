@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": null,
+  "copyright": null,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "woolbed"
+    },
+    {
+      "name": "bed"
+    },
+    {
+      "name": "shitbed2"
+    },
+    {
+      "name": "shitbed"
+    },
+    {
+      "name": "inn_bed"
+    },
+    {
+      "name": "haybed"
+    },
+    {
+      "name": "double_wool"
+    },
+    {
+      "name": "double"
+    }
+  ]
+}
